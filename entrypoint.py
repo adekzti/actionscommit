@@ -33,6 +33,8 @@ def run():
     debug(chmod(['600', netrc_path]))
     debug(git(['config', '--global', 'user.email', email]))
     debug(git(['config', '--global', 'user.name', name]))
+    debug(git(['config', '--global', 'http.version', 'HTTP/1.1']))
+    debug(git(['config', '--global', 'http.postBuffer', '157286400']))
     debug(git(['config', '--global', '--add', 'safe.directory', '/github/workspace']))
     debug(f'username:{github_actor}, branch:{branch}, commit message:{commit_message}')
     with open(netrc_path) as f:
